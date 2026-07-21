@@ -1115,8 +1115,7 @@ all SECTIONS. "
             org-roam-ql-buffer-in 'org-roam-db)
       (when pre-render-fn
         (funcall pre-render-fn))
-      (let* ((-compare-fn #'org-roam-ql--compare-nodes)
-             (filter-node-ids (and filter-source-or-query
+      (let* ((filter-node-ids (and filter-source-or-query
                                    (-map #'org-roam-node-id (org-roam-ql-nodes filter-source-or-query))))
              (nodes (if (and filter-source-or-query (null filter-node-ids))
                         (prog1 nil
